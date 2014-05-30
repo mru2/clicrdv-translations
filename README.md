@@ -1,24 +1,21 @@
-# ClicrdvTranslations
-
-TODO: Write a gem description
+# ClicRDV::Translations
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'clicrdv_translations'
+    gem 'clicrdv_translations', :git => 'https://github.com/mru2/clicrdv-translations.git', :require => false
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install clicrdv_translations
 
 ## Usage
 
-```
+```ruby
+require 'clicrdv_translations'
+
 # Initialize with
 # - the API key of the localeapp project (mandatory)
 # - the path to a writeable folder for the .yml files and sync data (optional, defaults to /tmp)
@@ -31,17 +28,5 @@ translations = client.translations
 
 # Get flattened translations (only key/value)
 translations = client.translations(:flatten => true)
-
-
-
+# => { 'en' => {'foo' => 'bar'}, 'fr' => {'foo' => 'baz', 'boo.bar' => 'baz' } }
 ```
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/clicrdv_translations/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
