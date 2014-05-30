@@ -8,15 +8,16 @@ Gem::Specification.new do |spec|
   spec.version       = ClicrdvTranslations::VERSION
   spec.authors       = ["David Ruyer"]
   spec.email         = ["david.ruyer@clicrdv.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Helper for fetching the translation hash for non-rails projects}
   spec.homepage      = ""
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0")
+  spec.files         = Dir['README.md', 'lib/**/*']
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+
+  spec.add_dependency "localeapp", "~> 0.7"
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"

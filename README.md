@@ -18,6 +18,24 @@ Or install it yourself as:
 
 ## Usage
 
+```
+# Initialize with
+# - the API key of the localeapp project (mandatory)
+# - the path to a writeable folder for the .yml files and sync data (optional, defaults to /tmp)
+
+client = ClicRDV::Translations.new('api_key', File.join(File.dirname(__FILE__), '.tmp'))
+
+# Get the translations
+translations = client.translations
+# => { 'en' => {'foo' => 'bar'}, 'fr' => {'foo' => 'baz', 'boo' => {'bar' => 'baz'} } }
+
+# Get flattened translations (only key/value)
+translations = client.translations(:flatten => true)
+
+
+
+```
+
 TODO: Write usage instructions here
 
 ## Contributing
